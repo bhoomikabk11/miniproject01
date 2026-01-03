@@ -1,30 +1,13 @@
-# miniproject01
+# Setup
+1. python -m venv venv
+2. source venv/bin/activate  # or venv\Scripts\activate on Windows
+3. pip install -r requirements.txt
+4. python manage.py migrate
+5. python manage.py createsuperuser
+6. python manage.py runserver
 
-Intelligent Movement Analysis for Assisted Physiotherapy: Real-Time Monitoring and Feedback
+Open http://127.0.0.1:8000/ and register/login.
 
-
-Overview:
-
-This project introduces an intelligent physiotherapy assistant designed to ensure the accurate and safe execution of rehabilitation exercises. It bridges the gap between professional clinical supervision and unsupervised home-based practice by providing real-time guidance through computer vision.
-  
-
-Key Features:
-
-Real-Time Pose Tracking: Utilizes a standard webcam to extract 33 skeletal keypoints (shoulders, elbows, knees, hips, etc.) using the MediaPipe framework.  
-Joint-Angle Analysis: Automatically computes precise joint angles (e.g., elbow flexion, knee bending) to evaluate exercise quality against expert-defined models.  
-Immediate Corrective Feedback: Delivers live on-screen textual instructions (e.g., "Straighten your back") to help users correct mistakes instantly.  
-Performance Scoring: Assigns quantitative accuracy scores for each repetition based on joint conformity and movement smoothness.  
-Progress Tracking: Maintains detailed logs and generates performance reports to track rehabilitation trends over time. 
-
-
-Tech Stack:
-
-Language: Python  
-Computer Vision: OpenCV, MediaPipe  
-Data Processing: NumPy  
-Visualization: Matplotlib  
-
-
-Project Objectives:
-
-The system aims to reduce the risk of secondary injuries caused by incorrect posture, improve patient adherence to routines, and provide an affordable, scalable digital health solution for remote rehabilitation.  
+Notes:
+- For webcam monitoring, serve the site over https or in localhost (Chrome allows getUserMedia on localhost).
+- If you prefer server-side TTS, integrate e.g. gTTS or a TTS API; current implementation uses browser SpeechSynthesis.
